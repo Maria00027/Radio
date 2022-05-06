@@ -54,6 +54,7 @@ public class Radio {
         int currentVolume = this.getVolume();
 
         if (currentVolume == 10) {
+            this.setVolume(0);
             return;
         }
 
@@ -64,6 +65,7 @@ public class Radio {
         int currentVolume = this.getVolume();
 
         if (currentVolume == 0) {
+            this.setVolume(10);
             return;
         }
 

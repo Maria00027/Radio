@@ -22,7 +22,7 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setStation(2);
 
-        int expected = 5;
+        int expected = 2;
         int actual = radio.getStation();
 
         assertEquals(expected, actual);
@@ -70,7 +70,7 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setVolume(2);
 
-        int expected = 5;
+        int expected = 2;
         int actual = radio.getVolume();
 
         assertEquals(expected, actual);
