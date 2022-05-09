@@ -9,14 +9,13 @@ class RadioTest {
     @Test
     void shouldShowStationNumber() {
         Radio radio = new Radio();
-        radio.setStation(5);
+        radio.setStation(0);
 
-        int expected = 5;
+        int expected = 0;
         int actual = radio.getStation();
 
         assertEquals(expected, actual);
     }
-
 
     @Test
     void shouldShowTheCurrentNamber() {
@@ -29,8 +28,9 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
+
     @Test
-    void shouldShowTheCurrentNamberReturn() {
+    void shouldShowTheCurrentNumberReturn() {
         Radio radio = new Radio();
         radio.setStation(10);
 
@@ -41,7 +41,7 @@ class RadioTest {
     }
 
     @Test
-    void shouldShowNextTheNamber() {
+    void shouldShowNextTheNumber() {
         Radio radio = new Radio();
         radio.setStation(7);
 
@@ -54,7 +54,7 @@ class RadioTest {
     }
 
     @Test
-    void shouldShowNextTheNamberFulfillingTheCondition() {
+    void shouldShowNextTheNumberFulfillingTheCondition() {
         Radio radio = new Radio();
         radio.setStation(9);
 
@@ -81,7 +81,7 @@ class RadioTest {
 
 
     @Test
-    void shouldShowPrevTheNamberFulfillingTheCondition() {
+    void shouldShowPrevTheNumberFulfillingTheCondition() {
         Radio radio = new Radio();
         radio.setStation(0);
 
@@ -153,7 +153,7 @@ class RadioTest {
     }
 
     @Test
-    void shouldShowVolumeDowne() {
+    void shouldShowVolumeDown() {
         Radio radio = new Radio();
         radio.setVolume(6);
 
@@ -166,13 +166,13 @@ class RadioTest {
     }
 
     @Test
-    void shouldShowVolumeDowneFulfillingTheCondition() {
+    void shouldShowVolumeDownFulfillingTheCondition() {
         Radio radio = new Radio();
-        radio.setVolume(10);
+        radio.setVolume(0);
 
         radio.volumeDown();
 
-        int expected = 9;
+        int expected = 10;
         int actual = radio.getVolume();
 
         assertEquals(expected, actual);
