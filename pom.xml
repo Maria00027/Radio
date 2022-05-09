@@ -23,7 +23,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
         <finalName>max100%</finalName>
         <plugins>
@@ -77,4 +76,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
