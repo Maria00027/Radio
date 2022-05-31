@@ -43,11 +43,11 @@ class RadioTest {
     @Test
     void shouldShowNextTheNumber() {
         Radio radio = new Radio();
-        radio.setStation(7);
+        radio.setStation(10);
 
         radio.next();
 
-        int expected = 8;
+        int expected = 1;
         int actual = radio.getStation();
 
         assertEquals(expected, actual);
