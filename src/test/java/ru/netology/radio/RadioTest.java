@@ -16,6 +16,95 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldShowPrevMinNumberFulfillingTheCondition() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfRadioStation(0);
+
+        radio.prev();
+
+        int expected = 9;
+        int actual = radio.getNumberOfRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowPrevTheNumberFulfillingTheCondition() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfRadioStation(5);
+
+        radio.prev();
+
+        int expected = 4;
+        int actual = radio.getNumberOfRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowPrevMaxNumberFulfillingTheCondition() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfRadioStation(9);
+
+        radio.prev();
+
+        int expected = 8;
+        int actual = radio.getNumberOfRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowNextMaxNumberFulfillingTheCondition() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfRadioStation(9);
+
+        radio.next();
+
+        int expected = 0;
+        int actual = radio.getNumberOfRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowNextTheNumberFulfillingTheCondition() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfRadioStation(5);
+
+        radio.next();
+
+        int expected = 6;
+        int actual = radio.getNumberOfRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowNextMinNumberFulfillingTheCondition() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfRadioStation(0);
+
+        radio.next();
+
+        int expected = 1;
+        int actual = radio.getNumberOfRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    void shouldShowStationNumberAny() {
+        Radio radio = new Radio();
+        radio.setNumberOfRadioStation(9);
+
+        int expected = 9;
+        int actual = radio.getNumberOfRadioStation();
+
+        assertEquals(expected, actual);
+    }
 
     @Test
     void shouldShowStationNumberMax() {
@@ -35,107 +124,6 @@ class RadioTest {
 
         int expected = 0;
         int actual = radio.getNumberOfRadioStation();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldShowStationNumberAny() {
-        Radio radio = new Radio();
-        radio.setNumberOfRadioStation(5);
-
-        int expected = 5;
-        int actual = radio.getNumberOfRadioStation();
-
-        assertEquals(expected, actual);
-    }
-
-
-
-    @Test
-    void shouldShowStationNumber() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(5);
-
-        int expected = 5;
-        int actual = radio.getCurrentStation();
-
-        assertEquals(expected, actual);
-    }
-
-
-    @Test
-    void shouldShowCurrentStationMin() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(-1);
-
-        int expected = 0;
-        int actual = radio.getCurrentStation();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldShowTheCurrentStationMax() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(11);
-
-        int expected = 0;
-        int actual = radio.getCurrentStation();
-
-        assertEquals(expected, actual);
-    }
-
-
-
-    @Test
-    void shouldShowPrevTheNumberFulfillingTheCondition() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(0);
-
-        radio.prev();
-
-        int expected = 9;
-        int actual = radio.getCurrentStation();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldShowPrevTheNumber() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(4);
-
-        radio.prev();
-
-        int expected = 3;
-        int actual = radio.getCurrentStation();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldShowNextTheNumberFulfillingTheCondition() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(9);
-
-        radio.next();
-
-        int expected = 0;
-        int actual = radio.getCurrentStation();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldShowNextTheNumber() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(4);
-
-        radio.next();
-
-        int expected = 5;
-        int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
     }
