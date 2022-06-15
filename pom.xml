@@ -61,7 +61,7 @@
                         <configuration>
                             <rules>
                                 <rule>
-Ï                                    <limits>
+                                    <limits>
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>

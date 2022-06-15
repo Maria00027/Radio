@@ -5,11 +5,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
+    @Test
+    void shouldShowNextCurrentStationMin() {
+        Radio radio = new Radio(20);
+        radio.setStation(15);
+
+        radio.next();
+
+        int expected = 16;
+        int actual = radio.getStation();
+
+        assertEquals(expected, actual);
+    }
 
     @Test
-    void shouldShowStationNumber() {
-        Radio radio = new Radio();
-        radio.setStation(0);
+    void shouldShowNextCurrentStationLimitValueMax() {
+        Radio radio = new Radio(20);
+        radio.setStation(19);
+
+        radio.next();
 
         int expected = 0;
         int actual = radio.getStation();
@@ -18,7 +32,69 @@ class RadioTest {
     }
 
     @Test
-    void shouldShowTheCurrentNumber() {
+    void shouldShowPrevCurrentStation() {
+        Radio radio = new Radio(20);
+        radio.setStation(15);
+
+        radio.prev();
+
+        int expected = 14;
+        int actual = radio.getStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowCurrentPrevStationLimitValueMin() {
+        Radio radio = new Radio(20);
+        radio.setStation(0);
+
+        radio.prev();
+
+        int expected = 19;
+        int actual = radio.getStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowMinStation() {
+        Radio radio = new Radio();
+        radio.setMinStation(0);
+
+
+        int expected = 0;
+        int actual = radio.getMinStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowMaxStation() {
+        Radio radio = new Radio();
+        radio.setMaxStation(10);
+
+
+        int expected = 10;
+        int actual = radio.getMaxStation();
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    void shouldShowCurrentStationAny() {
+        Radio radio = new Radio();
+        radio.setStation(5);
+
+        int expected = 5;
+        int actual = radio.getStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowTheCurrentStationLimitValueMin() {
         Radio radio = new Radio();
         radio.setStation(-1);
 
@@ -30,65 +106,35 @@ class RadioTest {
 
 
     @Test
-    void shouldShowTheCurrentNumberReturn() {
-        Radio radio = new Radio();
-        radio.setStation(0);
-
-        int expected = 0;
-        int actual = radio.getStation();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldShowNextTheNumber() {
+    void shouldShowTheCurrentStationLimitValueMax() {
         Radio radio = new Radio();
         radio.setStation(10);
 
-        radio.next();
-
-        int expected = 1;
-        int actual = radio.getStation();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldShowNextTheNumberFulfillingTheCondition() {
-        Radio radio = new Radio();
-        radio.setStation(9);
-
-        radio.next();
-
         int expected = 0;
         int actual = radio.getStation();
 
         assertEquals(expected, actual);
     }
 
+
     @Test
-    void shouldShowPrevThe() {
+    void shouldShowMinVolume() {
         Radio radio = new Radio();
-        radio.setStation(6);
+        radio.setMinVolume(0);
 
-        radio.prev();
-
-        int expected = 5;
-        int actual = radio.getStation();
+        int expected = 0;
+        int actual = radio.getMinVolume();
 
         assertEquals(expected, actual);
     }
 
-
     @Test
-    void shouldShowPrevTheNumberFulfillingTheCondition() {
+    void shouldShowMaxVolume() {
         Radio radio = new Radio();
-        radio.setStation(0);
+        radio.setMaxVolume(100);
 
-        radio.prev();
-
-        int expected = 9;
-        int actual = radio.getStation();
+        int expected = 100;
+        int actual = radio.getMaxVolume();
 
         assertEquals(expected, actual);
     }
@@ -119,7 +165,7 @@ class RadioTest {
     @Test
     void shouldShowTheCurrentVolumeFulfillingTheCondition() {
         Radio radio = new Radio();
-        radio.setVolume(11);
+        radio.setVolume(101);
 
         int expected = 0;
         int actual = radio.getVolume();
@@ -143,11 +189,11 @@ class RadioTest {
     @Test
     void shouldShowVolumeUpFulfillingTheCondition() {
         Radio radio = new Radio();
-        radio.setVolume(10);
+        radio.setVolume(100);
 
         radio.volumeUp();
 
-        int expected = 0;
+        int expected = 100;
         int actual = radio.getVolume();
 
         assertEquals(expected, actual);
@@ -173,7 +219,7 @@ class RadioTest {
 
         radio.volumeDown();
 
-        int expected = 10;
+        int expected = 0;
         int actual = radio.getVolume();
 
         assertEquals(expected, actual);
